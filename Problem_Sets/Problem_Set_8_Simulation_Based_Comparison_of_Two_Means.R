@@ -7,6 +7,8 @@ for (i in 1:10000) {
   all_class <- c(all_class, class_raw_scores)
 }
 
+### class <- (class, list(class_raw_scores))
+
 unlucky_class_normative_scores <- c()
 for (j in unlucky_class) {
   normative_score <- length(which(j > all_class))/length(all_class)*100

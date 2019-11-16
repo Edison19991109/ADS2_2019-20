@@ -15,6 +15,8 @@ counts <- length(which(meanVec < 40))
 # }
 
 p26 <- counts/10000
+### p26 <- mean(which(meanVec<40))
+### Simulate one-tail t.test p-value
 mean <- replicate(10000, mean(runif(n = 5, min = 0, max = 100)))
 count <- length(which(mean < 40))
 p5 <- count/10000
@@ -38,6 +40,8 @@ for (i in 1:100) {
   }
   mean_leonie <- mean(count_Leonie)
   
+### mean_Lenoie <- mean(pnorm(c(64,63,62,59), mean = 50, sd = 10)*100) 
+  
   for (k in 1:4) {
     count_Sheldon[k] <- pnorm(q = Sheldon[k], mean = 50, sd = 10)*100
   }
@@ -46,6 +50,8 @@ for (i in 1:100) {
 }
 
 possiblility <-  sum(compare)/100
+
+###UnluckyNormScores = pnorm(rnorm(100000,40,8), 50, 10)*100
 
 unlucky_class <- pnorm(q = rnorm(n = 26, mean = 40, sd = 8), mean = 50, sd = 10)
 unlucky_class <- unlucky_class*100
