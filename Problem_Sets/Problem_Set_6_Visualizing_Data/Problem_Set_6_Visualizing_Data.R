@@ -1,5 +1,11 @@
 library(ggplot2)
 library(tidyr)
+library(dplyr)
 gdp <- read.csv("GDP.csv")
 gdp1 <- gather(gdp,key = "Year", value = "GDP", factor_key = T,-CountryName, convert = T)
 gdp1_cleaned <- gdp1[complete.cases(gdp1),]
+gdp_filter_country <- filter(gdp1_cleaned, gdp1_cleaned$CountryName == c('Germany')
+                             | gdp1_cleaned$CountryName == c('France')
+                             | gdp1_cleaned$CountryName == c('Italy')
+                             | gdp1_cleaned$CountryName == c('Greece'))
+gdp_filter_country_2 <- filter(gdp_filter_country, gdp_filter_country$Year == "X1960")
