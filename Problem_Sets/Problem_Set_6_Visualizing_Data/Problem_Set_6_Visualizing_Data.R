@@ -46,5 +46,4 @@ da <- dplyr::left_join(x = eu, y =gdp.2018 , by = c('region' = 'CountryName'))
 map <- ggplot(da, aes(x = long, y = lat, group = group)) + geom_polygon(aes(fill = GDP))
 map <- map + labs(title = "2018 GDP in eu countries")+ scale_fill_gradient(low="dark blue",high="red",breaks=c(1e+12,2e+12,3e+12),labels=c("1 Trillion","2 Trillion","3 Trillion"))
 png("GDP map.png", width = 600, height = 600) 
-map
 dev.off()
