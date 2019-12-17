@@ -22,9 +22,11 @@ g3 <- g2 + geom_text(aes(label = GDP), size = 2)
 g4 <- g3 + labs(title = 'GDP trends in the countries', x = 'Year', y='GDP')+
 theme(plot.title = element_text(hjust = 0.5))+scale_colour_hue("CountryName")
 
+##geom_text(aes(label =GDP),hjust = 0.1, nudge_x = 0.05 ,size=2) + labs(title = "GDP trends in the countries")
+
 g5 <- g4 + scale_y_continuous(trans = 'log2')
 g6 <- g5 + facet_grid(~CountryName)
-### facet_wrap cut horizonilly
+### facet_wrap cut horizonilly facet_wrap(~CountryName,ncol =4)
 
 
 g7 <- g1 + geom_smooth(method = 'loess')
