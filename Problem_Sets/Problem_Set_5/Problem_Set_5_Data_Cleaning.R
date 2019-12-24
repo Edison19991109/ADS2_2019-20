@@ -1,0 +1,48 @@
+data <- read.csv('Rdata_diamonds_samples100_mdf.csv')
+head(data)
+typeof(data$ID)
+class(data$ID)
+head(data$carat)
+class(data$carat)
+head(data$cut)
+class(data$cut)
+cut.chr <- as.character(data$cut)
+class(cut.chr)
+
+var1=c(2,3,5,6)
+class(var1)
+var2=c(2.0,3.9,5.1,6.9)
+class(var2)
+var3=c(2L,3L,5L,6L)
+class(var3)
+
+var.num=c(2.0,3.9,5.1,6.9)
+print(var.num)
+class(var.num)
+var.int=c(2L,3L,5L,6L)
+print(var.int)
+class(var.int)
+var.char=c("Hello",",","world","!")
+class(var.char)
+print(var.char)
+var.fac=factor(c("mid","mid","high","low"),
+               levels=c("low","mid","high"))
+print(var.fac)
+class(var.fac)
+data.list=list(var.num,var.int,var.char,var.fac)
+head(data.list)
+data.list[[1]]
+data.list[[1]][1]
+data.list[[3]]
+data.list[[3]][3]
+length(data.list)
+dim(data.list)
+data.matrix <- as.matrix(data)
+head(data.matrix)
+class(data.matrix[, 1])
+class(data.matrix[ ,2])
+
+head(data)
+head(is.na(data))
+tail(data)
+tail(is.na(data))
