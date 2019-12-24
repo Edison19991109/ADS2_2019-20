@@ -1,4 +1,4 @@
-jellybeans <- read.csv('jellybeans.csv')
+all_experiments <- read.csv('jellybeans.csv')
 
 1-0.95^20
 
